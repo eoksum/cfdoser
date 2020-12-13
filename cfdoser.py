@@ -56,11 +56,14 @@ def main():
 				print(Fore.CYAN + "Http proxy basarili bir sekilde alindi!")
 	else:
 		pass
-	list = str(input(Fore.GREEN + "Liste (proxy.txt) : " + Fore.WHITE))
+	#list = str(input(Fore.GREEN + "Liste (proxy.txt) : " + Fore.WHITE))
+	list = "/root/proxy.txt"
 	pprr = open(list).readlines()
 	print(Fore.GREEN + "Proxies Count : " + Fore.WHITE + "%d" %len(pprr))
-	thr = int(input(Fore.GREEN + "Threads (1-400 Default Is 300) : " + Fore.WHITE))
-	per = int(input(Fore.GREEN + "CC.Power (1-100 Default Is 70) : " + Fore.WHITE))
+	#thr = int(input(Fore.GREEN + "Threads (1-400 Default Is 300) : " + Fore.WHITE))
+	#per = int(input(Fore.GREEN + "CC.Power (1-100 Default Is 70) : " + Fore.WHITE))
+	thr = 300
+	per = 70
 	opth()
 
 def atk():
